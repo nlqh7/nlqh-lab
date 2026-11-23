@@ -28,7 +28,7 @@ npm --prefix app run dev
 
 ## Deployment
 
-Cloudflare Pages runs `npm run build:cloudflare` and publishes `app/dist`. The `main` branch deploys to production; other branches and pull requests can use preview deployments. GitHub Actions performs CI build validation and does not create a competing deployment.
+Cloudflare Pages runs `npm run build:cloudflare` and publishes `app/dist`. The `main` branch deploys to production; other branches and pull requests can use preview deployments. All repository paths are watched so source and workflow changes trigger a deployment. GitHub Actions performs CI build validation independently and does not create a competing deployment.
 
 ## Licensing and credits
 
