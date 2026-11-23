@@ -1,5 +1,7 @@
 # NLQH Lab
 
+[![CI](https://github.com/nlqh7/nlqh-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/nlqh7/nlqh-lab/actions/workflows/ci.yml)
+
 Personal tools, experiments, and ideas at [nlqh.online](https://nlqh.online).
 
 ## Projects in this repository
