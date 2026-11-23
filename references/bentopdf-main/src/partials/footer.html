@@ -1,0 +1,14 @@
+{{#if simpleMode}} {{> footer-simple}} {{else}}
+<footer class="nlqh-footer">
+  <div class="nlqh-footer-top">
+    <a class="nlqh-footer-brand" href="{{baseUrl}}"><img src="{{baseUrl}}images/nlqh-mark.svg" alt="" /><span>把文件留在你的设备里。<small>NLQH PDF · 浏览器里的文档工作间</small></span></a>
+    <a href="https://nlqh.online/#/documents" class="nlqh-footer-back">回到实验室 <span aria-hidden="true">↗</span></a>
+  </div>
+  <div class="nlqh-footer-grid">
+    <div><p>常用工具</p><a href="{{baseUrl}}merge-pdf">合并 PDF</a><a href="{{baseUrl}}compress-pdf">压缩 PDF</a><a href="{{baseUrl}}organize-pdf">整理页面</a></div>
+    <div><p>格式转换</p><a href="{{baseUrl}}image-to-pdf">图片转 PDF</a><a href="{{baseUrl}}pdf-to-jpg">PDF 转图片</a><a href="{{baseUrl}}pdf-to-word">PDF 转 Word</a></div>
+    <div><p>开源与许可</p><a href="https://github.com/alam00000/bentopdf" target="_blank" rel="noopener noreferrer">BentoPDF 上游项目 ↗</a><a href="{{baseUrl}}licensing">AGPL-3.0 许可</a><a href="{{baseUrl}}source.zip" download>本模块修改后源码</a></div>
+  </div>
+  <div class="nlqh-footer-bottom"><span>LOCAL FIRST · NO ACCOUNT · NO FILE UPLOAD</span><span>基于 BentoPDF v{{appVersion}} 适配</span></div>
+</footer>
+{{/if}}

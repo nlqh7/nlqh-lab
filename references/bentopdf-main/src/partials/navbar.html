@@ -1,0 +1,29 @@
+{{#if simpleMode}} {{> navbar-simple}} {{else}}
+<nav class="nlqh-nav" aria-label="PDF 工作台导航">
+  <div class="nlqh-nav-inner">
+    <a href="{{baseUrl}}" class="nlqh-nav-brand" id="home-logo" aria-label="NLQH PDF 工具目录">
+      <img id="nav-logo" src="{{baseUrl}}{{#if brandLogo}}{{brandLogo}}{{else}}images/nlqh-mark.svg{{/if}}" alt="" />
+      <span id="nav-brand">NLQH <b>PDF</b></span>
+    </a>
+    <span class="nlqh-nav-caption">DOCUMENT WORKSHOP / 01</span>
+    <div class="nlqh-nav-links">
+      <a href="{{baseUrl}}#tools-header">全部工具</a>
+      <a href="{{baseUrl}}merge-pdf">合并 PDF</a>
+      <a href="{{baseUrl}}image-to-pdf">图片转 PDF</a>
+      <a href="https://nlqh.online/#/documents" class="nlqh-back-link">返回 NLQH Lab <span aria-hidden="true">↗</span></a>
+    </div>
+    <button id="mobile-menu-button" type="button" class="nlqh-menu-button" aria-controls="mobile-menu" aria-expanded="false">
+      <span class="sr-only">打开导航菜单</span>
+      <svg id="menu-icon" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <svg id="close-icon" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="hidden nlqh-mobile-menu">
+    <a href="{{baseUrl}}#tools-header">全部工具</a>
+    <a href="{{baseUrl}}merge-pdf">合并 PDF</a>
+    <a href="{{baseUrl}}split-pdf">拆分 PDF</a>
+    <a href="{{baseUrl}}image-to-pdf">图片转 PDF</a>
+    <a href="https://nlqh.online/#/documents">返回 NLQH Lab ↗</a>
+  </div>
+</nav>
+{{/if}}

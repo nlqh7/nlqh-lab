@@ -1,0 +1,43 @@
+# Dependencies and build outputs
+node_modules/
+dist/
+app/public/pdf/
+app/public/_headers
+tmp/
+references/ielts/
+references/design-library/
+references/toolknit-desktop/
+references/toolknit-sparse/
+references/xlsx-0.20.3.tgz
+
+# Local deployment helpers and records
+*_deploy.py
+compare_deploy_requests.py
+finalize_deploy.py
+make_browser_requests.py
+manifest_probe.py
+prepare_direct_deploy.py
+prepare_pdf_tests.py
+verify_live.py
+customize_pdf.py
+update_main_pdf.py
+fix_pdf_links.py
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.local
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Logs, caches, and editor files
+*.log
+*.zip
+coverage/
+.npm-cache/
+.vscode/
+.idea/
+.DS_Store

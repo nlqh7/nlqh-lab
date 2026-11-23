@@ -1,0 +1,16 @@
+NLQH PDF adaptation
+Upstream: https://github.com/alam00000/bentopdf
+Upstream main revision downloaded: f1d685bcf607c904f0c6fb385e8048974a2bc8b0
+Upstream license: AGPL-3.0-only (see LICENSE and licensing.html)
+
+Changes for nlqh.online/pdf/:
+- Added a Chinese NLQH document-workshop homepage and navigation.
+- Added a paper/ink responsive visual theme and mobile navigation styling.
+- Added direct links to common PDF tasks and the NLQH Lab directory.
+- Added this change notice and made the modified module source available at /pdf/source.zip.
+- Configured the module for the /pdf/ subpath with default Chinese content.
+- Vendored SheetJS xlsx 0.20.3 after verifying the published SHA-512; the registry fallback was not retained.
+- Made the LibreOffice WASM base URL configurable and added ordered-chunk loading, so the two large engine resources can be served from this site within Cloudflare Pages' 25 MiB per-file limit.
+
+The processing tools remain based on BentoPDF and their respective upstream dependencies.
+This notice does not relicense the module or claim the separate NLQH Lab homepage is AGPL.

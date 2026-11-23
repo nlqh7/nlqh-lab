@@ -1,0 +1,17 @@
+{
+  "name": "nlqh-lab-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "NLQH Lab main site and integrated PDF workshop",
+  "scripts": {
+    "dev": "npm --prefix app run dev --",
+    "ci:install": "npm --prefix references/bentopdf-main ci && npm --prefix app ci",
+    "build:pdf": "npm --prefix references/bentopdf-main run build",
+    "build": "npm run build:pdf && python assemble_pdf.py && npm --prefix app run build",
+    "build:cloudflare": "npm run ci:install && npm run build",
+    "preview": "npm --prefix app run preview --"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

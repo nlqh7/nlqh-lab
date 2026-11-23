@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build the complete site
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install locked dependencies
+        run: npm run ci:install
+
+      - name: Build NLQH Lab and PDF workshop
+        run: npm run build
+
+      - name: Validate deployment output
+        shell: python
+        run: |
+          from pathlib import Path
+          root = Path('app/dist')
+          assert (root / 'index.html').is_file(), 'Missing main-site index.html'
+          assert (root / 'pdf/index.html').is_file(), 'Missing PDF workshop index.html'
+          assert (root / 'pdf/zh/page-numbers').exists() or (root / 'pdf/zh/page-numbers.html').is_file(), 'Missing localized PDF tools'
+          files = [p for p in root.rglob('*') if p.is_file()]
+          oversized = [(str(p), p.stat().st_size) for p in files if p.stat().st_size > 25 * 1024 * 1024]
+          assert not oversized, f'Cloudflare asset limit exceeded: {oversized}'
+          print(f'Validated {len(files)} deployment files; no asset exceeds 25 MiB.')
